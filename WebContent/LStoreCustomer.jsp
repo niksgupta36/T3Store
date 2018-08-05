@@ -58,7 +58,7 @@
 			document.getElementById("videoID").style.f
 			var imageData = canvas.toDataURL();
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("POST", "/TakePhoto/LStoreCustomer", true);
+			xmlhttp.open("POST", "/T3Store/LStoreCustomer", true);
 			xmlhttp.send(imageData);
 			xmlhttp.onreadystatechange=function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

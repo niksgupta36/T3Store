@@ -52,10 +52,10 @@ public class LStoreCustomer extends HttpServlet {
 				buffer.append((char) current);
 			String data = new String(buffer);
 			data = data.substring(data.indexOf(",") + 1);
-			// System.out.println("PNG image data on Base64: " + data);
+			//System.out.println("PNG image data on Base64: " + data);
 			String filename = new Random().nextInt(100000) + ".jpg";
 
-			File file = new File("/Users/nikhil.gupta/Desktop/" + filename);
+			File file = new File("/tmp/" + filename);
 			//System.out.println(file);
 			FileOutputStream output = new FileOutputStream(file);
 			
@@ -63,11 +63,6 @@ public class LStoreCustomer extends HttpServlet {
 			FaceDetect detect = new FaceDetect();
 			
 			String faceid = detect.getFaceId(file);
-			
-			
-			
-			
-			
 			
 			
 			LGetOrder getorder = new LGetOrder();

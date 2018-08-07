@@ -24,7 +24,7 @@
 	<div id="demo"></div><br>
 	
 	<div>
-	<button onclick="location.href = 'index.jsp';"  style=" width:100px; height:30px; ">
+	<button onclick="location.href = 'https://t3store.azurewebsites.net/';"  style=" width:100px; height:30px; ">
 	HOME PAGE
 	</button>
 	</div>

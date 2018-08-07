@@ -52,10 +52,10 @@ public class LStoreCustomer extends HttpServlet {
 				buffer.append((char) current);
 			String data = new String(buffer);
 			data = data.substring(data.indexOf(",") + 1);
-			//System.out.println("PNG image data on Base64: " + data);
+			System.out.println("PNG image data on Base64: " + data);
 			String filename = new Random().nextInt(100000) + ".jpg";
-
-			File file = new File("/Users/nikhil.gupta/Desktop/" + filename);
+			
+			File file = new File( filename);
 			//System.out.println(file);
 			FileOutputStream output = new FileOutputStream(file);
 			
@@ -79,7 +79,7 @@ public class LStoreCustomer extends HttpServlet {
 //			order.changestatus(getorder1);
 			ArrayList<String> list1 = new ArrayList();
 			list1 = getorder.getDetails(list2);
-			//System.out.println(list1);
+		//	System.out.println(faceid);
 			response.setContentType("text/plain");
 	        PrintWriter out = response.getWriter();
 	    //    out.println("Welcome "+custname);

@@ -13,7 +13,7 @@
 	<button type="submit"> Pick Up</button>	
 	</form>
 	<br>
-	<form action="https://api.backendless.com/7AACD2FF-30C9-55BC-FF08-02D8062DEF00/5C14247F-7ED9-6D78-FFEB-9067A9997900/files/web/html/order.html" >
+	<form target ="_blank" action="NewFile.jsp" >
 	<button type="submit"> Place an Order</button>	
 	</form>
 	

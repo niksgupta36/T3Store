@@ -66,10 +66,12 @@ public static final String POST_DATA = "";
            JSONArray jsonArray = new JSONArray(jsonString);
            while(i<jsonArray.length()) {
            JSONObject obj=(JSONObject) jsonArray.get(i);
+       //    System.out.println(verify.getVerify(faceid, (String) obj.get("faceID")));
            if(verify.getVerify(faceid, (String) obj.get("faceID"))) {
-        	   Thread.sleep(100);
+        	//   Thread.sleep(100);
 
         	   list.add((String) obj.get("orderID"));
+        	  // System.out.println(list);
         	   
            }
             

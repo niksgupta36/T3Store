@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Welcome Customer!</title>
 <link rel="stylesheet" href="styles1.css">
-
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
 	<div>
@@ -15,7 +15,7 @@
 	</div>
 	
 	<div >
-		<input class="button" type="button" value="Take photo" onclick="capture()"
+		<input class="button" type="button" value="Take photo" onclick="capture();"
 			style="width: 200px; height: 40px; " /> 
 		<input  class="button" type="button"
 			value="Confirm" onclick=" send();" style="width: 200px; height: 40px; " />
@@ -24,12 +24,13 @@
 	<div id="demo"></div><br>
 	
 	<div>
-	<button onclick="location.href = 'https://t3store.azurewebsites.net';"  style=" width:100px; height:30px; ">
+	<button onclick="location.href = 'index.jsp';"  style=" width:100px; height:30px; ">
 	HOME PAGE
 	</button>
 	</div>
+
 	<script type="text/javascript">
-		var video = document.getElementById('videoID');
+    		var video = document.getElementById('videoID');
 		var canvas = document.getElementById('canvasID');
 		var context = canvas.getContext('2d');
 		
@@ -55,14 +56,16 @@
 	
 		function send() {
 			document.getElementById("demo").innerHTML="Loading..";
-			document.getElementById("videoID").style.f
+			
 			var imageData = canvas.toDataURL();
+			console.log(imageData);
 			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.open("POST", "/T3Store/LStoreCustomer", true);
 			xmlhttp.send(imageData);
 			xmlhttp.onreadystatechange=function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					document.getElementById("demo").innerHTML=xmlhttp.responseText;
+				
 				}
 			}
 	//	load();

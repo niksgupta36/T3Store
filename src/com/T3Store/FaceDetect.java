@@ -43,7 +43,7 @@ public String getFaceId(File file) {
 
         // Request headers. Replace the example key below with your valid subscription key.
         request.setHeader("Content-Type", "application/octet-stream");
-        request.setHeader("Ocp-Apim-Subscription-Key", "41ba76664c874969b77aa9d5963ddddb");
+        request.setHeader("Ocp-Apim-Subscription-Key", "95120f7a28d245babef520a8730f68d1");
 
 
 

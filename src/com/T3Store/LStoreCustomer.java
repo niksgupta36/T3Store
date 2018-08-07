@@ -52,7 +52,7 @@ public class LStoreCustomer extends HttpServlet {
 				buffer.append((char) current);
 			String data = new String(buffer);
 			data = data.substring(data.indexOf(",") + 1);
-			System.out.println("PNG image data on Base64: " + data);
+		//	System.out.println("PNG image data on Base64: " + data);
 			String filename = new Random().nextInt(100000) + ".jpg";
 			
 			File file = new File("/Users/nikhil.gupta/Desktop/" + filename);

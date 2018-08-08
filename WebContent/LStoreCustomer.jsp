@@ -8,10 +8,10 @@
 </head>
 <body>
 	<div>
-		<video id="videoID" autoplay style="border: 7px solid black; border-radius: 100px;"></video>
+		<video id="videoID" autoplay style="border: 2px solid black; border-radius: 100px;"></video>
 	</div>
 	<div>
-		<canvas id="canvasID"  style="border: 7px solid black; border-radius: 100px;  "></canvas>
+		<canvas id="canvasID"  style="border: 2px solid black; border-radius: 100px;  "></canvas>
 	</div>
 	
 	<div >
@@ -72,7 +72,7 @@
 			//window.location.replace("thankyou.jsp");
 		};
 	</script>
-
+    
 </body>
 </html>
 

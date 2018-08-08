@@ -54,10 +54,10 @@ public class LStoreCustomer extends HttpServlet {
 			data = data.substring(data.indexOf(",") + 1);
 		//	System.out.println("PNG image data on Base64: " + data);
 			String filename = new Random().nextInt(100000) + ".jpg";
-			File file = java.io.File.createTempFile("personFace", ".jpg");
+			//File file = java.io.File.createTempFile("personFace", ".jpg");
 			//file.deleteOnExit();
-			
-			//File file = new File("/Users/nikhil.gupta/Desktop/" + filename);
+			String tmp = System.getProperty("java.io.tmpdir");
+			File file = new File(tmp + "/" + filename);
 			//System.out.println(file);
 			FileOutputStream output = new FileOutputStream(file);
 			

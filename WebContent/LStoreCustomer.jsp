@@ -4,29 +4,35 @@
 <meta charset="UTF-8">
 <title>Welcome Customer!</title>
 <link rel="stylesheet" href="styles1.css">
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
 	<div>
-		<video id="videoID" autoplay style="border: 2px solid black; border-radius: 100px;"></video>
+		<video id="videoID" autoplay
+			style="border: 4px solid black; border-radius: 100px;"></video>
 	</div>
 	<div>
-		<canvas id="canvasID"  style="border: 2px solid black; border-radius: 100px;  "></canvas>
+		<canvas id="canvasID"
+			style="border: 4px solid black; border-radius: 100px;"></canvas>
 	</div>
-	
-	<div >
-		<input class="button" type="button" value="Take photo" onclick="capture();"
-			style="width: 200px; height: 40px; " /> 
-		<input  class="button" type="button"
-			value="Confirm" onclick=" send();" style="width: 200px; height: 40px; " />
-	</div><br>
-	
-	<div id="demo"></div><br>
-	
+
 	<div>
-	<button onclick="location.href = 'index.jsp';"  style=" width:100px; height:30px; ">
-	HOME PAGE
-	</button>
+		<input class="button" type="button" value="Take photo"
+			onclick="capture();" style="width: 200px; height: 40px;" /> <input
+			class="button" type="button" value="Confirm" onclick=" send();"
+			style="width: 200px; height: 40px;" />
+	</div>
+	<br>
+
+	<div id="demo"></div>
+	<br>
+
+	<div>
+		<form action="index.jsp">
+			<button type="submit" style="width: 100px; height: 30px;">HOME PAGE</button>
+		</form>
+
 	</div>
 
 	<script type="text/javascript">
@@ -60,19 +66,21 @@
 			var imageData = canvas.toDataURL();
 			console.log(imageData);
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("POST", "/T3Store/LStoreCustomer", true);
+			xmlhttp.open("POST", "LStoreCustomer", true);
 			xmlhttp.send(imageData);
 			xmlhttp.onreadystatechange=function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					document.getElementById("demo").innerHTML=xmlhttp.responseText;
 				
+				} else {
+					document.getElementById("demo").innerHTML=xmlhttp.responseText;
 				}
 			}
 	//	load();
 			//window.location.replace("thankyou.jsp");
 		};
 	</script>
-    
+
 </body>
 </html>
 

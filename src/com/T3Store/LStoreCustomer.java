@@ -53,11 +53,12 @@ public class LStoreCustomer extends HttpServlet {
 			String data = new String(buffer);
 			data = data.substring(data.indexOf(",") + 1);
 		//	System.out.println("PNG image data on Base64: " + data);
+			PrintWriter out = response.getWriter();
 			String filename = new Random().nextInt(100000) + ".jpg";
-			//File file = java.io.File.createTempFile("personFace", ".jpg");
+			File file = java.io.File.createTempFile("personFace", ".jpg");
 			//file.deleteOnExit();
 			String tmp = System.getProperty("java.io.tmpdir");
-			File file = new File(tmp + "/" + filename);
+			//File file = new File(tmp + "/" + filename);
 			//System.out.println(file);
 			FileOutputStream output = new FileOutputStream(file);
 			
@@ -83,15 +84,13 @@ public class LStoreCustomer extends HttpServlet {
 			list1 = getorder.getDetails(list2);
 		//	System.out.println(faceid);
 			response.setContentType("text/plain");
-	        PrintWriter out = response.getWriter();
+	       // PrintWriter out = response.getWriter();
 	    //    out.println("Welcome "+custname);
 	        out.println("<p>Thank You for your photo!</p>");
 	        System.lineSeparator();
 	        for(int i=0;i<list2.size();i++) {
 	        	//System.out.println(i);
 	        	out.println("<p>Your orderId is : "+ list2.get(i) +" ( "+ list1.get(i) + ")</p>" );
-	        	
-	        	
 	        	
 	        }
 	        if(list1==null) {
@@ -104,8 +103,11 @@ public class LStoreCustomer extends HttpServlet {
 			
 			output.flush();
 			output.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			PrintWriter out = response.getWriter();
+			out.println("<p>"+e.getMessage()+"</p>");
 		}
 		
 	}

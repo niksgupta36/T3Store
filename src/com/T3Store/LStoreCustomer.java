@@ -55,12 +55,17 @@ public class LStoreCustomer extends HttpServlet {
 		//	System.out.println("PNG image data on Base64: " + data);
 			PrintWriter out = response.getWriter();
 			String filename = new Random().nextInt(100000) + ".jpg";
-			File file = java.io.File.createTempFile("personFace", ".jpg");
-			//file.deleteOnExit();
-			String tmp = System.getProperty("java.io.tmpdir");
-			//File file = new File(tmp + "/" + filename);
+			File file = File.createTempFile("personFace", ".jpg");
+		//	String filename = new Random().nextInt(100000) + ".jpg";
+			
+			//File file = new File(  filename);
 			//System.out.println(file);
 			FileOutputStream output = new FileOutputStream(file);
+			//file.deleteOnExit();
+			//String tmp = System.getProperty("java.io.tmpdir");
+			//File file = new File(tmp + "/" + filename);
+			//System.out.println(file);
+		//	FileOutputStream output = new FileOutputStream(file);
 			
 			output.write(Base64.decodeBase64(data));
 			FaceDetect detect = new FaceDetect();
